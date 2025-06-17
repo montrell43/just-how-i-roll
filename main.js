@@ -45,7 +45,10 @@ doubD6ImgOne.src = 'images/start/d6.png'
 doubD6ImgTwo.src = 'images/start/d6.png'
 
 const dTwelve = document.querySelector('#d12-roll');
-dTwelve.src = 'images/start/d12.png'
+dTwelve.src = 'images/start/d12.jpeg'
+
+const dTwenty = document.querySelector('#d20-roll');
+dTwenty.src = 'images/start/d20.jpg'
 
 
 
@@ -77,9 +80,16 @@ doubD6ImgOne.addEventListener('click', function () {
 
 dTwelve.addEventListener('click', function () {
   const twelve = getRandomNumber(12)
-  console.log(`d12: ${twelve}`)
+  //console.log(`d12: ${twelve}`)
   twelves.push(twelve)
   dTwelve.src = `images/numbers/${twelve}.png`
+})
+
+dTwenty.addEventListener('click', function () {
+  const twenty = getRandomNumber(20)
+  //console.log(`d12: ${twelve}`)
+  twenties.push(twenty)
+  dTwenty.src = `images/numbers/${twenty}.png`
 })
 
 
