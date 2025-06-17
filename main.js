@@ -29,17 +29,30 @@ const sortByNumber = function(arr) {
 /*******************
  * YOUR CODE BELOW *
  *******************/
+const d6Image = document.querySelector('#d6-roll');
+d6Image.src = 'images/start/d6.png';
 
 
 
+//const firstName ="Taurus";
+//const lastName = 'Merriweather'
+//console.log(`${firstName} ${lastName} is here`)
+
+// click listener
+// finding a random number
 /*******************
  * EVENT LISTENERS *
  *******************/
+d6Image.addEventListener('click', function() {
+  const roll = getRandomNumber(6)
+  sixes.push(roll)
+d6Image.src = `images/d6/${random}.png`
+    console.log(roll)
+})
 
 
-
-
-
+// clear out data from arr
+// reset the images
 /******************
  * RESET FUNCTION *
  ******************/
