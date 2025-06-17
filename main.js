@@ -50,6 +50,7 @@ dTwelve.src = 'images/start/d12.jpeg'
 const dTwenty = document.querySelector('#d20-roll');
 dTwenty.src = 'images/start/d20.jpg'
 
+const reset = document.querySelector('#reset-button')
 
 
 //const firstName ="Taurus";
@@ -98,8 +99,25 @@ dTwenty.addEventListener('click', function () {
 /******************
  * RESET FUNCTION *
  ******************/
+function resetAll() {
+     const d6Image = document.querySelector('#d6-roll');
+d6Image.src = 'images/start/d6.png';
 
+const doubD6ImgOne = document.querySelector('#double-d6-roll-1');
+const doubD6ImgTwo = document.querySelector('#double-d6-roll-2');
+doubD6ImgOne.src = 'images/start/d6.png'
+doubD6ImgTwo.src = 'images/start/d6.png'
 
+const dTwelve = document.querySelector('#d12-roll');
+dTwelve.src = 'images/start/d12.jpeg'
+
+const dTwenty = document.querySelector('#d20-roll');
+dTwenty.src = 'images/start/d20.jpg'
+}
+
+const button = document.querySelector('#reset-button')
+button.addEventListener('click', resetAll)
+reset.addEventListener('click', ["#reset-button"])
 
 /****************************
  * CLICK HANDLING FUNCTIONS *
