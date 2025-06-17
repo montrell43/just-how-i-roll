@@ -44,9 +44,9 @@ d6Image.src = 'images/start/d6.png';
  * EVENT LISTENERS *
  *******************/
 d6Image.addEventListener('click', function() {
-  const roll = getRandomNumber(6)
-  sixes.push(roll)
-d6Image.src = `images/d6/${random}.png`
+  const random = getRandomNumber(6)
+  random.push(roll)
+d6Image.src = `images/d6/${roll}.png`
     console.log(roll)
 })
 
