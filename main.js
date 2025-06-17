@@ -26,11 +26,26 @@ const sortByNumber = function(arr) {
   return arr.slice().sort(byNumber);
 }
 
+function double() {
+const dblOne = getRandomNumber(6);
+const dblTwo = getRandomNumber(6)
+
+return [dblOne, dblTwo]
+}
+
 /*******************
  * YOUR CODE BELOW *
  *******************/
 const d6Image = document.querySelector('#d6-roll');
 d6Image.src = 'images/start/d6.png';
+
+const doubD6ImgOne = document.querySelector('#double-d6-roll-1');
+const doubD6ImgTwo = document.querySelector('#double-d6-roll-2');
+doubD6ImgOne.src = 'images/start/d6.png'
+doubD6ImgTwo.src = 'images/start/d6.png'
+
+const dTwelve = document.querySelector('#d12-roll');
+dTwelve.src = 'images/start/d12.png'
 
 
 
@@ -43,11 +58,28 @@ d6Image.src = 'images/start/d6.png';
 /*******************
  * EVENT LISTENERS *
  *******************/
-d6Image.addEventListener('click', function() {
-  const random = getRandomNumber(6)
-  random.push(roll)
+d6Image.addEventListener('click', function () {
+  const roll = getRandomNumber(6)
+  sixes.push(roll)
 d6Image.src = `images/d6/${roll}.png`
     console.log(roll)
+})
+
+doubD6ImgOne.addEventListener('click', function () {
+  // assigning the rollOne rollTwo to the double function which is calling the func to be used in the event listner which reassignsed it to num to be pushed mimcing first event listener
+  const [rollOne, rollTwo] = double();
+  const num = rollOne + rollTwo
+  
+  doubD6ImgOne.src = `images/d6/${rollOne}.png`
+  doubD6ImgTwo.src = `images/d6/${rollTwo}.png`
+  doubleSixes.push(num)
+})
+
+dTwelve.addEventListener('click', function () {
+  const twelve = getRandomNumber(12)
+  console.log(`d12: ${twelve}`)
+  twelves.push(twelve)
+  dTwelve.src = `images/numbers/${twelve}.png`
 })
 
 
