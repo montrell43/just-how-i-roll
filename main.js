@@ -239,14 +239,14 @@ function mode(arr) {
   for(let num of arr) {
     // if undefined add 1 to it
    if(nash[num] === undefined) {
-    // making a property of nash key of num to the value of how many times a num appears
+    // making a property of nash key of num to the value of how many times a num appears and keeps count after the numb has been found
     nash[num] = 1
    } else {
     nash[num] ++
    }
   }
 // holds the high value
-let modesValue;  
+let modesValue = [];  
 // what is ran already once iteration starts
   let modes = 0;
 
@@ -256,7 +256,9 @@ let modesValue;
     // if a num appear more then the other it is the biggest num
     if(nash[key] > modes) {
       modes = nash[key];
-      modesValue = Number(key);
+      modesValue = [key];
+    } else if (nash[key] === modes) {
+      modesValue.push(key)
     }
   }
   return modesValue;
